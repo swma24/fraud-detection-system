@@ -1,7 +1,10 @@
 package com.kb.assignment;
 
+import org.joda.time.DateTime;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
+import java.util.Date;
 
 /**
  * 입금 이벤트
@@ -13,9 +16,9 @@ import java.text.ParseException;
 public class DepositEvent extends Event {
     private BigDecimal amount; // 입금 금액
 
-    public DepositEvent(String datetime, String clientNo, String accountNo, String amount) throws ParseException {
-        super(EventType.DEPOSIT, datetime, clientNo, accountNo);
-        this.amount = new BigDecimal(amount);
+    public DepositEvent(DateTime timestamp, String clientNo, String accountNo, long amount) throws ParseException {
+        super(EventType.DEPOSIT, timestamp, clientNo, accountNo);
+        this.amount = BigDecimal.valueOf(amount);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.kb.assignment;
 
+import org.joda.time.DateTime;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
 
@@ -11,8 +13,8 @@ import java.text.ParseException;
  */
 public class NewAccountEvent extends Event {
 
-    public NewAccountEvent(String datetime, String clientNo, String accountNo) throws ParseException {
-        super(EventType.NEW_ACCOUNT, datetime, clientNo, accountNo);
+    public NewAccountEvent(DateTime timestamp, String clientNo, String accountNo) throws ParseException {
+        super(EventType.NEW_ACCOUNT, timestamp, clientNo, accountNo);
     }
 
     @Override

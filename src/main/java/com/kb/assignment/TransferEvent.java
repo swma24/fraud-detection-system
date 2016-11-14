@@ -1,5 +1,7 @@
 package com.kb.assignment;
 
+import org.joda.time.DateTime;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
 
@@ -20,13 +22,13 @@ public class TransferEvent extends Event {
     private String receivingAccountOwner;   // 수취 계좌주
     private BigDecimal amount;              // 이체 금액
 
-    public TransferEvent(String datetime, String clientNo, String accountNo, String prevBalance,
-                 String receivingBank, String receivingAccountOwner, String amount) throws ParseException {
-        super(EventType.TRANSFER, datetime, clientNo, accountNo);
-        this.prevBalance = new BigDecimal(prevBalance);
+    public TransferEvent(DateTime timestamp, String clientNo, String accountNo, long prevBalance,
+                         String receivingBank, String receivingAccountOwner, long amount) throws ParseException {
+        super(EventType.TRANSFER, timestamp, clientNo, accountNo);
+        this.prevBalance = BigDecimal.valueOf(prevBalance);
         this.receivingBank = receivingBank;
         this.receivingAccountOwner = receivingAccountOwner;
-        this.amount = new BigDecimal(amount);
+        this.amount = BigDecimal.valueOf(amount);
     }
 
     @Override

@@ -27,7 +27,7 @@ public class BRule extends Rule {
 //            Event e2 = events.get(1); // 계좌개설 후 이벤트
 //            Calendar calendar = Calendar.getInstance();
 //            calendar.add(Calendar.DATE, 7);
-//            Date sevenDaysAgo = calendar.getTime();
+//            DateTime sevenDaysAgo = calendar.getTime();
 //            if (e.getType() == EventType.NEW_ACCOUNT && e.getTimestamp().compareTo(sevenDaysAgo) <= 0
 //                    && e2.getType() == EventType.DEPOSIT) { // 7일 이내 개설된 계좌 및 입금
 //
