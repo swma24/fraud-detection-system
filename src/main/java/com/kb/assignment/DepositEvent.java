@@ -4,7 +4,6 @@ import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
-import java.util.Date;
 
 /**
  * 입금 이벤트

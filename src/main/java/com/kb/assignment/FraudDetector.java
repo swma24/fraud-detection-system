@@ -29,7 +29,7 @@ public class FraudDetector {
             Thread thread = new Thread(() -> {
                 boolean isFraud = rule.isFraud(balance, curEvent, events);
                 if (isFraud)
-                    System.out.println("Alert! account " + curEvent.getAccountNo() + " is corresponds to " + rule.getName());
+                    System.out.println("[Alert] account " + curEvent.getAccountNo() + " is corresponds to " + rule.getName());
             });
             thread.start();
         }
